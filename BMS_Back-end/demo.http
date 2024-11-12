@@ -1,5 +1,36 @@
-### GET request to example server
-GET https://examples.http-client.intellij.net/get
-    ?generated-in=PyCharm
+POST http://127.0.0.1:5000/books
+Content-Type: application/json
+
+{
+  "author": "木村晴彦",
+  "book_name": "恋爱契约",
+  "book_number": "G123",
+  "book_prize": 59.9,
+  "book_publisher": "梦幻出版公司",
+  "book_type": "恋爱冒险",
+  "id": 3
+}
 
 ###
+
+
+GET http://127.0.0.1:5000/books
+Accept: application/json
+
+###
+PUT http://127.0.0.1:5000/books/3
+Content-Type: application/json
+
+{
+  "author": "木村晴彦",
+  "book_name": "恋爱契约与结婚👰",
+  "book_number": "G123",
+  "book_prize": 59.9,
+  "book_publisher": "梦幻出版公司",
+  "book_type": "恋爱冒险",
+  "id": 3
+}
+
+###
+DELETE http://127.0.0.1:5000/books/3
+Accept: application/json
