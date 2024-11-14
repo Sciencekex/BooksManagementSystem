@@ -1,19 +1,15 @@
 from flask import Flask, request
+from flask_cors import CORS
 from flask.views import MethodView
 
-from extension import db, cors
+from extension import db
 from models import Book
 
 app = Flask(__name__)
-cors.init_app(app)
+CORS().init_app(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
-
-
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Welcome Books!'
 
 
 @app.cli.command()
@@ -21,6 +17,11 @@ def create():
     db.drop_all()
     db.create_all()
     Book.init_db()
+
+
+@app.route('/')
+def hello_world():  # put application's code here
+    return 'Welcome Books!'
 
 
 class BookApi(MethodView):
@@ -99,10 +100,8 @@ class BookApi(MethodView):
             'message': '数据修改成功'
         }
 
+
 book_api = BookApi.as_view('book_api')
 app.add_url_rule('/books', view_func=book_api, methods=['GET', ], defaults={'book_id': None})
 app.add_url_rule('/books', view_func=book_api, methods=['POST', ])
 app.add_url_rule('/books/<int:book_id>', view_func=book_api, methods=['GET', 'PUT', 'DELETE'])
-
-if __name__ == '__main__':
-    app.run(debug=True)
