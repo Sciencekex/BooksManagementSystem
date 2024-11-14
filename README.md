@@ -1,5 +1,21 @@
 https://www.bilibili.com/video/BV1Jr4y1771i?p=2
 
+***
+
+https://notes.zhengxinonly.com/bilibili/case/vue_book.html
+
+https://gitee.com/nmaptech/flask_vue_demo
+
+https://github.com/guosaike/fvtushu
+
+
+
+源码: [flask+图书信息管理系统（flask+vue）.zip](flask+图书信息管理系统（flask+vue）.zip) 
+
+***
+
+
+
 在 VS Code 中初始化存储库并上传到 GitHub 的步骤如下：
 
 ### 1. 初始化本地 Git 仓库
