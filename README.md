@@ -1,5 +1,7 @@
 # 做前后端分离项目一定要注意的点:一定要注意浏览器/代理问题,不然我还以为项目有bug!!!
 
+md一直报CORS错
+
 ***
 
 https://www.bilibili.com/video/BV1Jr4y1771i?p=2
